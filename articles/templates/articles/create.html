@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Article Create{% endblock title %}
+
+{% block body %}
+<h1>새로운 아티클 생성</h1>
+
+{% comment %} 아무것도 안적으면 /articles/create/ {% endcomment %}
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">생성하기</button><br>
+  <a href="{% url 'articles:index' %}">[Back]</a>
+</form>
+{% endblock body %}
